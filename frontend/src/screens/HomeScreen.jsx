@@ -311,6 +311,12 @@ const blogPosts = [
  },
 ];
 
+const startHandler = (e) => {
+ e.preventDefault();
+
+ console.log(e.target);
+};
+
 export default function Example() {
  return (
   <>
@@ -343,7 +349,7 @@ export default function Example() {
          cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat.
         </p>
         <div className='mt-10 sm:mt-12'>
-         <form action='#' className='sm:max-w-xl sm:mx-auto lg:mx-0'>
+         <form action='/signup' className='sm:max-w-xl sm:mx-auto lg:mx-0'>
           <div className='sm:flex'>
            <div className='min-w-0 flex-1'>
             <label htmlFor='email' className='sr-only'>
@@ -360,6 +366,7 @@ export default function Example() {
             <button
              type='submit'
              className='block w-full py-3 px-4 rounded-md shadow bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-medium hover:from-teal-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900'
+             onClick={() => startHandler}
             >
              Get Started
             </button>

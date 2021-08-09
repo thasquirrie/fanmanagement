@@ -20,6 +20,7 @@
   ```
 */
 import { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import { Popover, Transition } from '@headlessui/react';
 import {
  BookmarkAltIcon,
@@ -614,8 +615,8 @@ export default function Example() {
          </ul>
         </div>
 
-        <a
-         href='#'
+        <Link
+         href='/payment'
          className={classNames(
           tier.mostPopular
            ? 'bg-gradient-to-r from-teal-500 to-cyan-600 text-white hover:bg-green-700'
@@ -624,7 +625,7 @@ export default function Example() {
          )}
         >
          {tier.cta}
-        </a>
+        </Link>
        </div>
       ))}
      </div>
@@ -745,119 +746,6 @@ export default function Example() {
      </div>
     </section>
    </main>
-
-   {/* Footer */}
-   {/* <footer className='bg-gray-50' aria-labelledby='footerHeading'>
-    <h2 id='footerHeading' className='sr-only'>
-     Footer
-    </h2>
-    <div className='max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8'>
-     <div className='xl:grid xl:grid-cols-3 xl:gap-8'>
-      <div className='space-y-8 xl:col-span-1'>
-       <img
-        className='h-10'
-        src='https://tailwindui.com/img/logos/workflow-mark-gray-300.svg'
-        alt='Company name'
-       />
-       <p className='text-gray-500 text-base'>
-        Making the world a better place through constructing elegant
-        hierarchies.
-       </p>
-       <div className='flex space-x-6'>
-        {footer.social.map((link) => (
-         <a
-          key={link.name}
-          href={link.href}
-          className='text-gray-400 hover:text-gray-500'
-         >
-          <span className='sr-only'>{link.name}</span>
-          <link.icon className='h-6 w-6' aria-hidden='true' />
-         </a>
-        ))}
-       </div>
-      </div>
-      <div className='mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2'>
-       <div className='md:grid md:grid-cols-2 md:gap-8'>
-        <div>
-         <h3 className='text-sm font-semibold text-gray-400 tracking-wider uppercase'>
-          Solutions
-         </h3>
-         <ul className='mt-4 space-y-4'>
-          {footer.solutions.map((link) => (
-           <li key={link.name}>
-            <a
-             href={link.href}
-             className='text-base text-gray-500 hover:text-gray-900'
-            >
-             {link.name}
-            </a>
-           </li>
-          ))}
-         </ul>
-        </div>
-        <div className='mt-12 md:mt-0'>
-         <h3 className='text-sm font-semibold text-gray-400 tracking-wider uppercase'>
-          Support
-         </h3>
-         <ul className='mt-4 space-y-4'>
-          {footer.support.map((link) => (
-           <li key={link.name}>
-            <a
-             href={link.href}
-             className='text-base text-gray-500 hover:text-gray-900'
-            >
-             {link.name}
-            </a>
-           </li>
-          ))}
-         </ul>
-        </div>
-       </div>
-       <div className='md:grid md:grid-cols-2 md:gap-8'>
-        <div>
-         <h3 className='text-sm font-semibold text-gray-400 tracking-wider uppercase'>
-          Company
-         </h3>
-         <ul className='mt-4 space-y-4'>
-          {footer.company.map((link) => (
-           <li key={link.name}>
-            <a
-             href={link.href}
-             className='text-base text-gray-500 hover:text-gray-900'
-            >
-             {link.name}
-            </a>
-           </li>
-          ))}
-         </ul>
-        </div>
-        <div className='mt-12 md:mt-0'>
-         <h3 className='text-sm font-semibold text-gray-400 tracking-wider uppercase'>
-          Legal
-         </h3>
-         <ul className='mt-4 space-y-4'>
-          {footer.legal.map((link) => (
-           <li key={link.name}>
-            <a
-             href={link.href}
-             className='text-base text-gray-500 hover:text-gray-900'
-            >
-             {link.name}
-            </a>
-           </li>
-          ))}
-         </ul>
-        </div>
-       </div>
-      </div>
-     </div>
-     <div className='mt-12 border-t border-gray-200 pt-8'>
-      <p className='text-base text-gray-400 xl:text-center'>
-       &copy; 2020 Workflow, Inc. All rights reserved.
-      </p>
-     </div>
-    </div>
-   </footer> */}
   </div>
  );
 }

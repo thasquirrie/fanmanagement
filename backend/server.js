@@ -17,7 +17,7 @@ const DB = process.env.DATABASE.replace(
 
 const connectDB = async () => {
  try {
-  const conn = await mongoose.connect(DB, {
+  const conn = await mongoose.connect(DB_LOCAL, {
    useUnifiedTopology: true,
    useCreateIndex: true,
    useFindAndModify: false,

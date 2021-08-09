@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Disclosure, Popover, Menu, Transition } from '@headlessui/react';
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
 import { Link, NavLink } from 'react-router-dom';
-import { logout } from '../actions/userActions';
+import { getMyDetails, logout } from '../actions/userActions';
 
 const navigation = [
  { name: 'Pricing', href: '/pricing' },
@@ -21,6 +21,7 @@ const Header = ({ history }) => {
  console.log(user);
 
  const { userInfo } = userLogin;
+ console.log(user.photo);
 
  //  useEffect(() => {
  //    if (!user) {
@@ -33,11 +34,11 @@ const Header = ({ history }) => {
   dispatch(logout());
  };
 
- //  useEffect(() => {
- //   if (!userInfo) {
- //    history.push('/');
- //   }
- //  });
+ useEffect(() => {
+  if (!user) {
+   dispatch(getMyDetails);
+  }
+ });
 
  const classNames = (...classes) => {
   return classes.filter(Boolean).join(' ');

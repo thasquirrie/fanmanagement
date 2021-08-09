@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import DashboardScreen from './screens/DashboardScreen';
 import PricingScreen from './screens/PricingScreen';
 import ContactScreen from './screens/ContactScreen';
+import ProfileScreen from './screens/ProfileScreen';
 
 function App() {
  return (
@@ -21,6 +22,7 @@ function App() {
        <Route path='/login' component={LoginScreen} />
        <Route path='/signup' component={SignupScreen} />
        <Route path='/dashboard' component={DashboardScreen} />
+       <Route path='/profile' component={ProfileScreen} />
        <Route path='/pricing' component={PricingScreen} />
        <Route path='/contact' component={ContactScreen} />
        <Route path='/' component={HomeScreen} exact />
