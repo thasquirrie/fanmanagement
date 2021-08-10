@@ -1,3 +1,3 @@
 # fanmanagement
 
-link to preview: https://www.fanmanagement.herokuapp.com
+link to preview: https://fanmanagement.herokuapp.com
