@@ -35,8 +35,9 @@ const Header = ({ history }) => {
  };
 
  useEffect(() => {
-  if (!user) {
-   dispatch(getMyDetails);
+  if (!user.firstName) {
+   console.log('Not user for real!');
+   dispatch(getMyDetails());
   }
  });
 

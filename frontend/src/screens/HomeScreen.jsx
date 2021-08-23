@@ -349,7 +349,11 @@ export default function Example() {
          cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat.
         </p>
         <div className='mt-10 sm:mt-12'>
-         <form action='/signup' className='sm:max-w-xl sm:mx-auto lg:mx-0'>
+         <form
+          action='#'
+          className='sm:max-w-xl sm:mx-auto lg:mx-0'
+          onSubmit={() => startHandler}
+         >
           <div className='sm:flex'>
            <div className='min-w-0 flex-1'>
             <label htmlFor='email' className='sr-only'>
