@@ -117,6 +117,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
   const {
    data: {
     data: { user },
+    token,
    },
   } = await axios({
    method: 'GET',
@@ -126,10 +127,10 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
 
   dispatch({
    type: USER_DETAILS_SUCCESS,
-   payload: user,
+   payload: { user, token },
   });
 
-  // localStorage.setItem('userInfo', JSON.stringify({ user, token }));
+  localStorage.setItem('userInfo', JSON.stringify({ user, token }));
  } catch (error) {
   dispatch({
    type: USER_DETAILS_FAIL,

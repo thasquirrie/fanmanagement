@@ -21,7 +21,7 @@ const Header = ({ history }) => {
  console.log(user);
 
  const { userInfo } = userLogin;
- console.log(user.photo);
+ //  console.log(user.photo);
 
  //  useEffect(() => {
  //    if (!user) {
@@ -35,11 +35,10 @@ const Header = ({ history }) => {
  };
 
  useEffect(() => {
-  if (!user.firstName) {
+  if (!user) {
    console.log('Not user for real!');
-   dispatch(getMyDetails());
   }
- });
+ }, [user, dispatch]);
 
  const classNames = (...classes) => {
   return classes.filter(Boolean).join(' ');
@@ -245,8 +244,9 @@ const Header = ({ history }) => {
             </NavLink>
            ))}
           </div>
-          {!userInfo ? (
+          {!user ? (
            <>
+            {console.log(user)}
             <div className='mt-6 px-5'>
              <NavLink
               to='/signup'

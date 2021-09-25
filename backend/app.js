@@ -19,9 +19,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 if (process.env.NODE_ENV === 'development') {
- morgan('dev');
+  morgan('dev');
 } else if (process.env.NODE_ENV === 'production') {
- morgan('short');
+  morgan('short');
 }
 
 app.use('uploads', express.static(path.join(__dirname, 'uploads')));
@@ -30,25 +30,25 @@ app.use('/api/v1/users', userRouter);
 app.use('/api/v1/uploads', uploadRouter);
 
 if (process.env.NODE_ENV === 'production') {
- console.log(__dirname);
- app.use(express.static(path.join(__dirname, '../frontend/build')));
+  console.log(__dirname);
+  app.use(express.static(path.join(__dirname, '../frontend/build')));
 
- app.get('*', (req, res) => {
-  res.sendFile(__dirname, 'frontend', 'build', 'index.html');
- });
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend', 'build', 'index.html'));
+  });
 } else {
- app.get('/', (req, res, next) => {
-  res.status(200).send('API is running on port 5000');
- });
+  app.get('/', (req, res, next) => {
+    res.status(200).send('API is running on port 5000');
+  });
 }
 
 app.all('*', (req, res, next) => {
- next(
-  new AppError(
-   `The requested page: ${req.originalUrl} not found on this server`,
-   404
-  )
- );
+  next(
+    new AppError(
+      `The requested page: ${req.originalUrl} not found on this server`,
+      404
+    )
+  );
 });
 
 app.use(globalErrorHandler);
